@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ReportInfo.Created="07/14/2015 12:28:13" ReportInfo.Modified="07/14/2015 13:01:37" ReportInfo.CreatorVersion="1.3.2.0">
+<Report ReportInfo.Created="07/14/2015 12:28:13" ReportInfo.Modified="07/14/2015 13:28:01" ReportInfo.CreatorVersion="1.3.2.0">
   <Dictionary>
-    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq+rW0RkboK+/8CKGGYUID3ctBV8q9SvKYxl3iiE7vBnh7Tgou0+4WFf3NfmPSvHVFCA5dCoglKs+3QTr8+oLRaDwzsIeVB0rI8jDzKXYSS0A/UKkOjB7Y6LU1vcSAIFWrZp8X4od5xtSzNxOQwKsMG5B3I6oiEYkE0hnZVdtpuD0=">
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq+rW0RkboK+/8CKGGYUID3ctBV8q9SvKYxl3iiE7vBnh7Tgou0+4WFf3NfmPSvHVFCA5dCoglKs+3QTr8+oLRaDwzsIeVB0rI8jDzKXYSS0A/UKkOjB7Y6LU1vcSAIFWrZp8X4od5xtSzNxOQwKsMG2I+8az1msoiJnwU52RccLg=">
       <TableDataSource Name="owner_pets" DataType="System.Int32" Enabled="true" TableName="owner_pets">
         <Column Name="own" DataType="System.String"/>
         <Column Name="petName" DataType="System.String"/>
@@ -14,24 +14,26 @@
     <Total Name="Total1" TotalType="Count" Evaluator="Data1" PrintOn="PageFooter1"/>
   </Dictionary>
   <ReportPage Name="Page1">
-    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="75.6">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="103.95">
       <TextObject Name="Text6" Left="113.4" Top="9.45" Width="491.4" Height="56.7" Text="Owners list" HorzAlign="Center" VertAlign="Center" Font="Arial, 24pt, style=Bold"/>
+      <TextObject Name="Text9" Top="66.15" Width="283.5" Height="37.8" Text="Report generated at [Date]" Format="Date" Format.Format="F"/>
     </ReportTitleBand>
-    <PageHeaderBand Name="PageHeader1" Top="79.6" Width="718.2" Height="28.35"/>
-    <GroupHeaderBand Name="GroupHeader1" Top="111.95" Width="718.2" Height="56.7" Fill.Color="LightBlue" Condition="[owner_pets.own]">
+    <PageHeaderBand Name="PageHeader1" Top="107.95" Width="718.2" Height="28.35"/>
+    <GroupHeaderBand Name="GroupHeader1" Top="140.3" Width="718.2" Height="47.25" Fill.Color="LightBlue" Condition="[owner_pets.own]">
       <TextObject Name="Text1" Left="37.8" Top="9.45" Width="198.45" Height="28.35" Fill.Color="LightBlue" Text="[owner_pets.own]" VertAlign="Center" Font="Arial, 14pt, style=Bold"/>
-      <DataBand Name="Data1" Top="172.65" Width="718.2" Height="56.7" DataSource="owner_pets">
+      <DataBand Name="Data1" Top="191.55" Width="718.2" Height="56.7" DataSource="owner_pets">
         <TextObject Name="Text2" Left="37.8" Top="18.9" Width="151.2" Height="18.9" Text="[owner_pets.petName]"/>
         <TextObject Name="Text3" Left="207.9" Top="18.9" Width="141.75" Height="18.9" Text="[owner_pets.species]"/>
         <TextObject Name="Text4" Left="368.55" Top="18.9" Width="94.5" Height="18.9" Text="[owner_pets.sex]"/>
         <TextObject Name="Text5" Left="481.95" Top="18.9" Width="207.9" Height="18.9" Text="[owner_pets.birth]" Format="Date" Format.Format="D"/>
       </DataBand>
-      <GroupFooterBand Name="GroupFooter1" Top="233.35" Width="718.2" Height="37.8">
+      <GroupFooterBand Name="GroupFooter1" Top="252.25" Width="718.2" Height="37.8">
         <TextObject Name="Text7" Left="481.95" Top="9.45" Width="207.9" Height="18.9" Text="Total:  [Total]" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
       </GroupFooterBand>
     </GroupHeaderBand>
-    <PageFooterBand Name="PageFooter1" Top="275.15" Width="718.2" Height="18.9">
+    <PageFooterBand Name="PageFooter1" Top="294.05" Width="718.2" Height="47.25">
       <TextObject Name="Text8" Left="481.95" Width="207.9" Height="18.9" Text="Total:  [Total1]" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text10" Left="529.2" Top="28.35" Width="189" Height="18.9" Text="[Page] of [TotalPages#]" HorzAlign="Right"/>
     </PageFooterBand>
   </ReportPage>
 </Report>
