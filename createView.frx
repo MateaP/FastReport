@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ReportInfo.Created="07/14/2015 12:28:13" ReportInfo.Modified="07/14/2015 13:48:58" ReportInfo.CreatorVersion="1.3.2.0">
+<Report ReportInfo.Created="07/14/2015 12:28:13" ReportInfo.Modified="07/14/2015 14:15:33" ReportInfo.CreatorVersion="1.3.2.0">
   <Dictionary>
-    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq4QKyYid9I+sgkXdwPu5bZUSAlUh8baEO3eYWt0RlDsJkTEY2WFt7lOVMcmTbYU8CAEabkvzWFFuHNW85WxCRBzRKGrE7etyKKgo0kfZ39Zqyf1bkjCyhU9IhbSHw/aRCV8/ezThrP1G75p0oMHQGTMvQ6OY+tNU0jdIbH0+C2bW4kL6GpEaSjVTNwXwgu0WC">
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq4QKyYid9I+sgkXdwPu5bZUSAlUh8baEO3eYWt0RlDsJkTEY2WFt7lOVMcmTbYU8CAEabkvzWFFuHNW85WxCRBzRKGrE7etyKKgo0kfZ39Zqyf1bkjCyhU9IhbSHw/aRCV8/ezThrP1G75p0oMHQGTMvQ6OY+tNU0jdIbH0+C2bXgE4o5yvY1QKOptmqID1tp">
       <TableDataSource Name="owner_pets" DataType="System.Int32" Enabled="true" TableName="owner_pets">
         <Column Name="own" DataType="System.String"/>
         <Column Name="petName" DataType="System.String"/>
@@ -20,12 +20,12 @@
     </ReportTitleBand>
     <PageHeaderBand Name="PageHeader1" Top="107.95" Width="718.2" Height="28.35"/>
     <GroupHeaderBand Name="GroupHeader1" Top="140.3" Width="718.2" Height="47.25" Fill.Color="LightBlue" Condition="[owner_pets.own]">
-      <TextObject Name="Text1" Left="37.8" Top="9.45" Width="198.45" Height="28.35" Fill.Color="LightBlue" Text="[owner_pets.own]" VertAlign="Center" Font="Arial, 14pt, style=Bold"/>
+      <TextObject Name="Text1" Left="18.9" Top="9.45" Width="198.45" Height="28.35" Fill.Color="LightBlue" Text="[owner_pets.own]" VertAlign="Center" Font="Arial, 14pt, style=Bold"/>
       <DataBand Name="Data1" Top="191.55" Width="718.2" Height="56.7" DataSource="owner_pets">
         <TextObject Name="Text2" Left="37.8" Top="18.9" Width="151.2" Height="18.9" Text="[owner_pets.petName]"/>
         <TextObject Name="Text3" Left="207.9" Top="18.9" Width="141.75" Height="18.9" Text="[owner_pets.species]"/>
         <TextObject Name="Text4" Left="368.55" Top="18.9" Width="94.5" Height="18.9" Text="[owner_pets.sex]"/>
-        <TextObject Name="Text5" Left="481.95" Top="18.9" Width="207.9" Height="18.9" Text="[owner_pets.birth]" Format="Date" Format.Format="D"/>
+        <TextObject Name="Text5" Left="481.95" Top="18.9" Width="207.9" Height="18.9" Text="[String.Format (&quot;{0:dd/MM/yyyy}&quot;,[owner_pets.birth])]" Format="Date" Format.Format="D"/>
       </DataBand>
       <GroupFooterBand Name="GroupFooter1" Top="252.25" Width="718.2" Height="37.8">
         <TextObject Name="Text7" Left="481.95" Top="9.45" Width="207.9" Height="18.9" Text="Total:  [Total]" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
