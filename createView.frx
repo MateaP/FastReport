@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ReportInfo.Created="07/14/2015 12:28:13" ReportInfo.Modified="07/14/2015 12:52:06" ReportInfo.CreatorVersion="1.3.2.0">
+<Report ReportInfo.Created="07/14/2015 12:28:13" ReportInfo.Modified="07/14/2015 13:01:37" ReportInfo.CreatorVersion="1.3.2.0">
   <Dictionary>
-    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq+rW0RkboK+/8CKGGYUID3ctBV8q9SvKYxl3iiE7vBnh7Tgou0+4WFf3NfmPSvHVFCA5dCoglKs+3QTr8+oLRaDwzsIeVB0rI8jDzKXYSS0A/UKkOjB7Y6LU1vcSAIFWrZp8X4od5xtSzNxOQwKsMG7WPgO66/wLs9kUpLgGsbHU=">
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq+rW0RkboK+/8CKGGYUID3ctBV8q9SvKYxl3iiE7vBnh7Tgou0+4WFf3NfmPSvHVFCA5dCoglKs+3QTr8+oLRaDwzsIeVB0rI8jDzKXYSS0A/UKkOjB7Y6LU1vcSAIFWrZp8X4od5xtSzNxOQwKsMG5B3I6oiEYkE0hnZVdtpuD0=">
       <TableDataSource Name="owner_pets" DataType="System.Int32" Enabled="true" TableName="owner_pets">
         <Column Name="own" DataType="System.String"/>
         <Column Name="petName" DataType="System.String"/>
@@ -10,17 +10,8 @@
         <Column Name="birth" DataType="System.DateTime"/>
       </TableDataSource>
     </MsSqlDataConnection>
-    <MsSqlDataConnection Name="Connection1" ConnectionString="rijcmlq+rW0RkboK+/8CKGGYUID3ctBV8q9SvKYxl3iiE7vBnh7Tgou0+4WFf3NfmPSvHVFCA5dCoglKs+3QTr8+oLRaDwzsIeVB0rI8jDzKXYSS0A/UKkOjB7Y6LU1vcSAIFWrZp8X4od5xtSzNxOQwKsMG8hrt/PA7MpxHp0n/dqo06I=">
-      <TableDataSource Name="owner_pets1" DataType="System.Int32" Enabled="true" TableName="owner_pets">
-        <Column Name="o_id" DataType="System.Int32"/>
-        <Column Name="petName" DataType="System.String"/>
-        <Column Name="species" DataType="System.String"/>
-        <Column Name="sex" DataType="System.String"/>
-        <Column Name="birth" DataType="System.DateTime"/>
-        <Column Name="death" DataType="System.DateTime"/>
-        <Column Name="own" DataType="System.String"/>
-      </TableDataSource>
-    </MsSqlDataConnection>
+    <Total Name="Total" TotalType="Count" Expression="[owner_pets.sex]" Evaluator="Data1" PrintOn="GroupFooter1" ResetOnReprint="true"/>
+    <Total Name="Total1" TotalType="Count" Evaluator="Data1" PrintOn="PageFooter1"/>
   </Dictionary>
   <ReportPage Name="Page1">
     <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="75.6">
@@ -35,8 +26,12 @@
         <TextObject Name="Text4" Left="368.55" Top="18.9" Width="94.5" Height="18.9" Text="[owner_pets.sex]"/>
         <TextObject Name="Text5" Left="481.95" Top="18.9" Width="207.9" Height="18.9" Text="[owner_pets.birth]" Format="Date" Format.Format="D"/>
       </DataBand>
-      <GroupFooterBand Name="GroupFooter1" Top="233.35" Width="718.2" Height="37.8"/>
+      <GroupFooterBand Name="GroupFooter1" Top="233.35" Width="718.2" Height="37.8">
+        <TextObject Name="Text7" Left="481.95" Top="9.45" Width="207.9" Height="18.9" Text="Total:  [Total]" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
+      </GroupFooterBand>
     </GroupHeaderBand>
-    <PageFooterBand Name="PageFooter1" Top="275.15" Width="718.2" Height="18.9"/>
+    <PageFooterBand Name="PageFooter1" Top="275.15" Width="718.2" Height="18.9">
+      <TextObject Name="Text8" Left="481.95" Width="207.9" Height="18.9" Text="Total:  [Total1]" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
+    </PageFooterBand>
   </ReportPage>
 </Report>
