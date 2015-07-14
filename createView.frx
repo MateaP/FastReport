@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ReportInfo.Created="07/14/2015 12:28:13" ReportInfo.Modified="07/14/2015 13:28:01" ReportInfo.CreatorVersion="1.3.2.0">
+<Report ReportInfo.Created="07/14/2015 12:28:13" ReportInfo.Modified="07/14/2015 13:48:58" ReportInfo.CreatorVersion="1.3.2.0">
   <Dictionary>
-    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq+rW0RkboK+/8CKGGYUID3ctBV8q9SvKYxl3iiE7vBnh7Tgou0+4WFf3NfmPSvHVFCA5dCoglKs+3QTr8+oLRaDwzsIeVB0rI8jDzKXYSS0A/UKkOjB7Y6LU1vcSAIFWrZp8X4od5xtSzNxOQwKsMG2I+8az1msoiJnwU52RccLg=">
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq4QKyYid9I+sgkXdwPu5bZUSAlUh8baEO3eYWt0RlDsJkTEY2WFt7lOVMcmTbYU8CAEabkvzWFFuHNW85WxCRBzRKGrE7etyKKgo0kfZ39Zqyf1bkjCyhU9IhbSHw/aRCV8/ezThrP1G75p0oMHQGTMvQ6OY+tNU0jdIbH0+C2bW4kL6GpEaSjVTNwXwgu0WC">
       <TableDataSource Name="owner_pets" DataType="System.Int32" Enabled="true" TableName="owner_pets">
         <Column Name="own" DataType="System.String"/>
         <Column Name="petName" DataType="System.String"/>
@@ -16,7 +16,7 @@
   <ReportPage Name="Page1">
     <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="103.95">
       <TextObject Name="Text6" Left="113.4" Top="9.45" Width="491.4" Height="56.7" Text="Owners list" HorzAlign="Center" VertAlign="Center" Font="Arial, 24pt, style=Bold"/>
-      <TextObject Name="Text9" Top="66.15" Width="283.5" Height="37.8" Text="Report generated at [Date]" Format="Date" Format.Format="F"/>
+      <TextObject Name="Text9" Top="66.15" Width="283.5" Height="37.8" Text="Report generated at  [String.Format (&quot;{0:dd/MM/yyyy, HH:mm}&quot;, [Date])]&#13;" Format="Time" Format.Format="HH:mm"/>
     </ReportTitleBand>
     <PageHeaderBand Name="PageHeader1" Top="107.95" Width="718.2" Height="28.35"/>
     <GroupHeaderBand Name="GroupHeader1" Top="140.3" Width="718.2" Height="47.25" Fill.Color="LightBlue" Condition="[owner_pets.own]">
