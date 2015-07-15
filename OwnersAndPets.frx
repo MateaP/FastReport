@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ReportInfo.Created="07/15/2015 16:00:12" ReportInfo.Modified="07/15/2015 16:32:02" ReportInfo.CreatorVersion="1.3.2.0">
+<Report ReportInfo.Created="07/15/2015 16:00:12" ReportInfo.Modified="07/15/2015 16:35:42" ReportInfo.CreatorVersion="1.3.2.0">
   <Dictionary>
-    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq4QKyYid9I+sgkXdwPu5bZUSAlUh8baEO3eYWt0RlDsJkTEY2WFt7lOVMcmTbYU8CAEabkvzWFFuHNW85WxCRBzRKGrE7etyKKgo0kfZ39ZoSsiBi6uaCRVlBsj8q5PuWqEuAM0/P5wzY3rLos9Lweu00eV7Hy8MS4UfAPr6waljo1Rh+A7FKhx2bSTjDlx5/">
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq4QKyYid9I+sgkXdwPu5bZUSAlUh8baEO3eYWt0RlDsJkTEY2WFt7lOVMcmTbYU8CAEabkvzWFFuHNW85WxCRBzRKGrE7etyKKgo0kfZ39ZoSsiBi6uaCRVlBsj8q5PuWqEuAM0/P5wzY3rLos9Lweu00eV7Hy8MS4UfAPr6walgZPoq7jS0ctdVCWoAP82fX">
       <TableDataSource Name="pets" DataType="System.Int32" Enabled="true" TableName="pets">
         <Column Name="O_Id" DataType="System.Int32"/>
         <Column Name="petName" DataType="System.String"/>
@@ -35,6 +35,8 @@
         <TextObject Name="Text6" Left="236.25" Top="113.4" Width="198.45" Height="18.9" Text="Age:	[pets.age]"/>
       </DataBand>
     </DataBand>
-    <PageFooterBand Name="PageFooter1" Top="346.75" Width="718.2" Height="18.9"/>
+    <PageFooterBand Name="PageFooter1" Top="346.75" Width="718.2" Height="18.9">
+      <TextObject Name="Text7" Left="444.15" Width="264.6" Height="18.9" CanGrow="true" Text="[String.Format (&quot;{0:dd/MM/yyyy, HH:mm}&quot;, [Date])]&#13;" HorzAlign="Right"/>
+    </PageFooterBand>
   </ReportPage>
 </Report>
