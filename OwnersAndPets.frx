@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ReportInfo.Created="07/15/2015 16:00:12" ReportInfo.Modified="07/15/2015 16:32:02" ReportInfo.CreatorVersion="1.3.2.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq4QKyYid9I+sgkXdwPu5bZUSAlUh8baEO3eYWt0RlDsJkTEY2WFt7lOVMcmTbYU8CAEabkvzWFFuHNW85WxCRBzRKGrE7etyKKgo0kfZ39ZoSsiBi6uaCRVlBsj8q5PuWqEuAM0/P5wzY3rLos9Lweu00eV7Hy8MS4UfAPr6waljo1Rh+A7FKhx2bSTjDlx5/">
+      <TableDataSource Name="pets" DataType="System.Int32" Enabled="true" TableName="pets">
+        <Column Name="O_Id" DataType="System.Int32"/>
+        <Column Name="petName" DataType="System.String"/>
+        <Column Name="species" DataType="System.String"/>
+        <Column Name="sex" DataType="System.String"/>
+        <Column Name="birth" DataType="System.DateTime"/>
+        <Column Name="death" DataType="System.DateTime"/>
+        <Column Name="id" DataType="System.Int32"/>
+        <Column Name="age" DataType="System.Int32"/>
+        <Column Name="picture" DataType="System.Byte[]" BindableControl="Picture"/>
+      </TableDataSource>
+      <TableDataSource Name="owners" DataType="System.Int32" Enabled="true" TableName="owners">
+        <Column Name="id" DataType="System.Int32"/>
+        <Column Name="name" DataType="System.String"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <Relation Name="owners_pets" ParentDataSource="owners" ChildDataSource="pets" ParentColumns="id" ChildColumns="id" Enabled="true"/>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="75.6">
+      <TextObject Name="Text4" Left="217.35" Top="9.45" Width="330.75" Height="56.7" Text="Owners and pets list" Font="Arial, 22pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="79.6" Width="718.2" Height="28.35"/>
+    <DataBand Name="Data1" Top="111.95" Width="718.2" Height="66.15" DataSource="owners">
+      <TextObject Name="Text2" Left="28.35" Top="18.9" Width="189" Height="37.8" Text="[owners.name]" Font="Arial, 16pt, style=Bold"/>
+      <DataBand Name="Data2" Top="182.1" Width="718.2" Height="160.65" DataSource="pets">
+        <TextObject Name="Text1" Left="236.25" Top="28.35" Width="198.45" Height="18.9" Text="Name:	[pets.petName]"/>
+        <PictureObject Name="Picture1" Left="47.25" Top="18.9" Width="170.1" Height="122.85" DataColumn="pets.picture"/>
+        <TextObject Name="Text3" Left="236.25" Top="56.7" Width="198.45" Height="18.9" Text="Species:	[pets.species]"/>
+        <TextObject Name="Text5" Left="236.25" Top="85.05" Width="198.45" Height="18.9" Text="Sex:	[pets.sex]"/>
+        <TextObject Name="Text6" Left="236.25" Top="113.4" Width="198.45" Height="18.9" Text="Age:	[pets.age]"/>
+      </DataBand>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="346.75" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>
