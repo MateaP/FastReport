@@ -1,50 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ReportInfo.Created="07/15/2015 10:56:03" ReportInfo.Modified="07/15/2015 12:27:41" ReportInfo.CreatorVersion="1.3.2.0">
+<Report ReportInfo.Created="07/15/2015 10:56:03" ReportInfo.Modified="07/15/2015 13:49:00" ReportInfo.CreatorVersion="1.3.2.0">
   <Dictionary>
-    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq4QKyYid9I+sgkXdwPu5bZUSAlUh8baEO3eYWt0RlDsJkTEY2WFt7lOVMcmTbYU8CAEabkvzWFFuHNW85WxCRBzRKGrE7etyKKgo0kfZ39ZoSsiBi6uaCRVlBsj8q5PuWqEuAM0/P5wzY3rLos9Lweu00eV7Hy8MS4UfAPr6wali70ZvNsglxOyR8irQNOmSa">
-      <TableDataSource Name="owner_pets_matrix" DataType="System.Int32" Enabled="true" TableName="owner_pets_matrix">
+    <MsSqlDataConnection Name="Connection1" ConnectionString="rijcmlq4QKyYid9I+sgkXdwPu5bZUSAlUh8baEO3eYWt0RlDsJkTEY2WFt7lOVMcmTbYU8CAEabkvzWFFuHNW85WxCRBzRKGrE7etyKKgo0kfZ39ZoSsiBi6uaCRVlBsj8q5PuWqEuAM0/P5wzY3rLos9Lweu00eV7Hy8MS4UfAPr6walh+qNUpDKonX/UtMqkqsYA/">
+      <TableDataSource Name="pets_age_matrix" DataType="System.Int32" Enabled="true" TableName="pets_age_matrix">
         <Column Name="o_id" DataType="System.Int32"/>
         <Column Name="species" DataType="System.String"/>
+        <Column Name="age" DataType="System.Int32"/>
         <Column Name="own" DataType="System.String"/>
       </TableDataSource>
     </MsSqlDataConnection>
   </Dictionary>
-  <ReportPage Name="Page1">
-    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="47.25">
-      <TextObject Name="Text1" Left="274.05" Top="9.45" Width="179.55" Height="28.35" CanGrow="true" Text="Pets report" Font="Arial, 22pt, style=Bold"/>
+  <ReportPage Name="Page1" Landscape="true" PaperWidth="297" PaperHeight="210" FirstPageSource="15" OtherPagesSource="15">
+    <ReportTitleBand Name="ReportTitle1" Width="1047.06" Height="47.25">
+      <TextObject Name="Text1" Left="406.35" Top="9.45" Width="179.55" Height="28.35" CanGrow="true" Text="Pets report" Font="Arial, 22pt, style=Bold"/>
     </ReportTitleBand>
-    <PageHeaderBand Name="PageHeader1" Top="51.25" Width="718.2" Height="28.35"/>
-    <DataBand Name="Data1" Top="83.6" Width="718.2" Height="75.6">
-      <MatrixObject Name="Matrix1" Left="113.4" Top="9.45" Width="145.88" Height="58.68" Border.Lines="All" FixedRows="1" FixedColumns="1" DataSource="owner_pets_matrix">
+    <PageHeaderBand Name="PageHeader1" Top="51.25" Width="1047.06" Height="28.35"/>
+    <DataBand Name="Data1" Top="83.6" Width="1047.06" Height="107.66" CanGrow="true" KeepTogether="true" KeepDetail="true">
+      <MatrixObject Name="Matrix2" Left="66.15" Top="18.9" Width="162.2" Height="78.24" FixedRows="2" FixedColumns="1" WrappedGap="75.6" DataSource="pets_age_matrix" Style="Blue">
         <MatrixColumns>
-          <Header Expression="[owner_pets_matrix.species]"/>
+          <Header Expression="[pets_age_matrix.species]"/>
+          <Header Expression="[pets_age_matrix.age]"/>
         </MatrixColumns>
         <MatrixRows>
-          <Header Expression="[owner_pets_matrix.own]"/>
+          <Header Expression="[pets_age_matrix.own]"/>
         </MatrixRows>
         <MatrixCells>
           <Cell Expression="1"/>
         </MatrixCells>
-        <TableColumn Name="Column1" Width="42.26" AutoSize="true"/>
-        <TableColumn Name="Column2" Width="63.64" AutoSize="true"/>
-        <TableColumn Name="Column3" Width="39.98" AutoSize="true"/>
-        <TableRow Name="Row1" Height="19.56" AutoSize="true">
-          <TableCell Name="Cell1" Border.Lines="All" Fill.Color="LimeGreen" Text="own" HorzAlign="Center" VertAlign="Center"/>
-          <TableCell Name="Cell2" Border.Lines="All" Fill.Color="LimeGreen" Text="[species]" HorzAlign="Center" VertAlign="Center"/>
-          <TableCell Name="Cell5" Border.Lines="All" Fill.Color="LimeGreen" Text="Total" HorzAlign="Center" VertAlign="Center"/>
+        <TableColumn Name="Column5" Width="42.26" AutoSize="true"/>
+        <TableColumn Name="Column6" Width="39.98" AutoSize="true"/>
+        <TableColumn Name="Column7" Width="39.98" AutoSize="true"/>
+        <TableColumn Name="Column8" Width="39.98" AutoSize="true"/>
+        <TableRow Name="Row5" Height="19.56" AutoSize="true">
+          <TableCell Name="Cell17" Border.Lines="All" Border.Color="White" Fill.Color="151, 189, 253" Text="own" HorzAlign="Center" VertAlign="Center" RowSpan="2"/>
+          <TableCell Name="Cell18" Border.Lines="All" Border.Color="White" Fill.Color="151, 189, 253" Text="[species]" HorzAlign="Center" VertAlign="Center" ColSpan="2"/>
+          <TableCell Name="Cell23"/>
+          <TableCell Name="Cell26" Border.Lines="All" Border.Color="White" Fill.Color="151, 189, 253" Text="Total" HorzAlign="Center" VertAlign="Center" RowSpan="2"/>
         </TableRow>
-        <TableRow Name="Row2" Height="19.56" AutoSize="true">
-          <TableCell Name="Cell3" Border.Lines="All" Fill.Color="LightGreen" Text="[own]" HorzAlign="Center" VertAlign="Center"/>
-          <TableCell Name="Cell4" Border.Lines="All" Fill.Color="LightGreen" Text="[1]" HorzAlign="Right" VertAlign="Center"/>
-          <TableCell Name="Cell6" Border.Lines="All" Fill.Color="LightGreen" HorzAlign="Right" VertAlign="Center"/>
+        <TableRow Name="Row6" Height="19.56" AutoSize="true">
+          <TableCell Name="Cell19"/>
+          <TableCell Name="Cell20" Border.Lines="All" Border.Color="White" Fill.Color="151, 189, 253" Text="[age]" HorzAlign="Center" VertAlign="Center"/>
+          <TableCell Name="Cell24" Border.Lines="All" Border.Color="White" Fill.Color="151, 189, 253" Text="Total" HorzAlign="Center" VertAlign="Center"/>
+          <TableCell Name="Cell27"/>
         </TableRow>
-        <TableRow Name="Row3" Height="19.56" AutoSize="true">
-          <TableCell Name="Cell7" Border.Lines="All" Fill.Color="LimeGreen" Text="Total" HorzAlign="Center" VertAlign="Center"/>
-          <TableCell Name="Cell8" Border.Lines="All" Fill.Color="LimeGreen" HorzAlign="Right" VertAlign="Center"/>
-          <TableCell Name="Cell9" Border.Lines="All" Fill.Color="LimeGreen" HorzAlign="Right" VertAlign="Center"/>
+        <TableRow Name="Row7" Height="19.56" AutoSize="true">
+          <TableCell Name="Cell21" Border.Lines="All" Border.Color="White" Fill.Color="151, 189, 253" Text="[own]" HorzAlign="Center" VertAlign="Center"/>
+          <TableCell Name="Cell22" Border.Lines="All" Border.Color="White" Fill.Color="186, 211, 254" Text="[1]" HorzAlign="Right" VertAlign="Center"/>
+          <TableCell Name="Cell25" Border.Lines="All" Border.Color="White" Fill.Color="186, 211, 254" HorzAlign="Right" VertAlign="Center"/>
+          <TableCell Name="Cell28" Border.Lines="All" Border.Color="White" Fill.Color="186, 211, 254" HorzAlign="Right" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row8" Height="19.56" AutoSize="true">
+          <TableCell Name="Cell29" Border.Lines="All" Border.Color="White" Fill.Color="151, 189, 253" Text="Total" HorzAlign="Center" VertAlign="Center"/>
+          <TableCell Name="Cell30" Border.Lines="All" Border.Color="White" Fill.Color="186, 211, 254" HorzAlign="Right" VertAlign="Center"/>
+          <TableCell Name="Cell31" Border.Lines="All" Border.Color="White" Fill.Color="186, 211, 254" HorzAlign="Right" VertAlign="Center"/>
+          <TableCell Name="Cell32" Border.Lines="All" Border.Color="White" Fill.Color="186, 211, 254" HorzAlign="Right" VertAlign="Center"/>
         </TableRow>
       </MatrixObject>
     </DataBand>
-    <PageFooterBand Name="PageFooter1" Top="163.2" Width="718.2" Height="18.9"/>
+    <PageFooterBand Name="PageFooter1" Top="195.26" Width="1047.06" Height="18.9"/>
   </ReportPage>
 </Report>
