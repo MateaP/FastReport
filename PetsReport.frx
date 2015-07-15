@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ReportInfo.Created="07/15/2015 10:56:03" ReportInfo.Modified="07/15/2015 13:49:00" ReportInfo.CreatorVersion="1.3.2.0">
+<Report ReportInfo.Created="07/15/2015 10:56:03" ReportInfo.Modified="07/15/2015 13:53:16" ReportInfo.CreatorVersion="1.3.2.0">
   <Dictionary>
-    <MsSqlDataConnection Name="Connection1" ConnectionString="rijcmlq4QKyYid9I+sgkXdwPu5bZUSAlUh8baEO3eYWt0RlDsJkTEY2WFt7lOVMcmTbYU8CAEabkvzWFFuHNW85WxCRBzRKGrE7etyKKgo0kfZ39ZoSsiBi6uaCRVlBsj8q5PuWqEuAM0/P5wzY3rLos9Lweu00eV7Hy8MS4UfAPr6walh+qNUpDKonX/UtMqkqsYA/">
+    <MsSqlDataConnection Name="Connection1" ConnectionString="rijcmlq4QKyYid9I+sgkXdwPu5bZUSAlUh8baEO3eYWt0RlDsJkTEY2WFt7lOVMcmTbYU8CAEabkvzWFFuHNW85WxCRBzRKGrE7etyKKgo0kfZ39ZoSsiBi6uaCRVlBsj8q5PuWqEuAM0/P5wzY3rLos9Lweu00eV7Hy8MS4UfAPr6walgWMGwXWdFB0dDOKAE4Kilu">
       <TableDataSource Name="pets_age_matrix" DataType="System.Int32" Enabled="true" TableName="pets_age_matrix">
         <Column Name="o_id" DataType="System.Int32"/>
         <Column Name="species" DataType="System.String"/>
@@ -16,7 +16,7 @@
     </ReportTitleBand>
     <PageHeaderBand Name="PageHeader1" Top="51.25" Width="1047.06" Height="28.35"/>
     <DataBand Name="Data1" Top="83.6" Width="1047.06" Height="107.66" CanGrow="true" KeepTogether="true" KeepDetail="true">
-      <MatrixObject Name="Matrix2" Left="66.15" Top="18.9" Width="162.2" Height="78.24" FixedRows="2" FixedColumns="1" WrappedGap="75.6" DataSource="pets_age_matrix" Style="Blue">
+      <MatrixObject Name="Matrix2" Width="1047.06" Height="107.66" Dock="Fill" FixedRows="2" FixedColumns="1" WrappedGap="75.6" DataSource="pets_age_matrix" Style="Blue">
         <MatrixColumns>
           <Header Expression="[pets_age_matrix.species]"/>
           <Header Expression="[pets_age_matrix.age]"/>
