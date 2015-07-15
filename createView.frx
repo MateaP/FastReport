@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ReportInfo.Created="07/14/2015 12:28:13" ReportInfo.Modified="07/14/2015 15:52:43" ReportInfo.CreatorVersion="1.3.2.0">
+<Report ReportInfo.Created="07/14/2015 12:28:13" ReportInfo.Modified="07/15/2015 10:38:21" ReportInfo.CreatorVersion="1.3.2.0">
   <ScriptText>using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,12 +18,29 @@ namespace FastReport
 {
   public class ReportScript
   {
+    private int count = 0;
+    private float avg = 0;
+
+    private void txtGroupCount_BeforePrint(object sender, EventArgs e)
+    {
+            count+=1;
+    }
     
+    public float division(int pets, int owners)
+    {
+            return ((float) pets / owners);
+    }
+      
+
+    private void Text12_BeforePrint(object sender, EventArgs e)
+    {
+            avg = Report.GetTotalValue(&quot;Total1&quot;) / (float) count;
+    }
   }
 }
 </ScriptText>
   <Dictionary>
-    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq4QKyYid9I+sgkXdwPu5bZUSAlUh8baEO3eYWt0RlDsJkTEY2WFt7lOVMcmTbYU8CAEabkvzWFFuHNW85WxCRBzRKGrE7etyKKgo0kfZ39ZoSsiBi6uaCRVlBsj8q5PuWqEuAM0/P5wzY3rLos9Lweu00eV7Hy8MS4UfAPr6waljb7jkG7IMq4fdQ+0R65pSy">
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq4QKyYid9I+sgkXdwPu5bZUSAlUh8baEO3eYWt0RlDsJkTEY2WFt7lOVMcmTbYU8CAEabkvzWFFuHNW85WxCRBzRKGrE7etyKKgo0kfZ39ZoSsiBi6uaCRVlBsj8q5PuWqEuAM0/P5wzY3rLos9Lweu00eV7Hy8MS4UfAPr6walhqrocChjIqBRoNCJXD9sgx">
       <TableDataSource Name="owner_pets" DataType="System.Int32" Enabled="true" TableName="owner_pets">
         <Column Name="own" DataType="System.String"/>
         <Column Name="petName" DataType="System.String"/>
@@ -32,36 +49,37 @@ namespace FastReport
         <Column Name="birth" DataType="System.DateTime"/>
       </TableDataSource>
     </MsSqlDataConnection>
-    <MsSqlDataConnection Name="Connection1" ConnectionString="rijcmlq4QKyYid9I+sgkXdwPu5bZUSAlUh8baEO3eYWt0RlDsJkTEY2WFt7lOVMcmTbYU8CAEabkvzWFFuHNW85WxCRBzRKGrE7etyKKgo0kfZ39ZoSsiBi6uaCRVlBsj8q5PuWqEuAM0/P5wzY3rLos9Lweu00eV7Hy8MS4UfAPr6walhQ/5A+sOF9rbJaLu+xeTbK">
+    <MsSqlDataConnection Name="Connection1" ConnectionString="rijcmlq4QKyYid9I+sgkXdwPu5bZUSAlUh8baEO3eYWt0RlDsJkTEY2WFt7lOVMcmTbYU8CAEabkvzWFFuHNW85WxCRBzRKGrE7etyKKgo0kfZ39ZoSsiBi6uaCRVlBsj8q5PuWqEuAM0/P5wzY3rLos9Lweu00eV7Hy8MS4UfAPr6walhGFzSc17gFBVf5setVKVKo">
       <TableDataSource Name="prosek" DataType="System.Int32" Enabled="true" TableName="prosek">
-        <Column Name="br" DataType="System.Int32"/>
-        <Column Name="id" DataType="System.Int32"/>
+        <Column Name="prosek" DataType="System.Double"/>
       </TableDataSource>
     </MsSqlDataConnection>
     <Total Name="Total" TotalType="Count" Expression="[owner_pets.sex]" Evaluator="Data1" PrintOn="GroupFooter1" ResetOnReprint="true"/>
-    <Total Name="Total1" TotalType="Count" Evaluator="Data1" PrintOn="PageFooter1"/>
-    <Total Name="Total2" Expression="[prosek.br]" Evaluator="Data1" PrintOn="ReportSummary1"/>
+    <Total Name="Total1" TotalType="Count" Evaluator="Data1" PrintOn="PageFooter1" ResetAfterPrint="false"/>
+    <Total Name="Total2" TotalType="Count" Evaluator="Data1" PrintOn="ReportSummary1"/>
   </Dictionary>
   <ReportPage Name="Page1">
     <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="103.95">
       <TextObject Name="Text6" Left="113.4" Top="9.45" Width="491.4" Height="56.7" Text="Owners list" HorzAlign="Center" VertAlign="Center" Font="Arial, 24pt, style=Bold"/>
-      <TextObject Name="Text9" Top="66.15" Width="283.5" Height="37.8" Text="Report generated at  [String.Format (&quot;{0:dd/MM/yyyy, HH:mm}&quot;, [Date])]&#13;" Format="Time" Format.Format="HH:mm"/>
+      <TextObject Name="Text9" Top="66.15" Width="255.15" Height="37.8" CanGrow="true" CanBreak="false" Text="Report generated at  [String.Format (&quot;{0:dd/MM/yyyy, HH:mm}&quot;, [Date])]&#13;" Format="Time" Format.Format="HH:mm"/>
     </ReportTitleBand>
     <PageHeaderBand Name="PageHeader1" Top="107.95" Width="718.2" Height="28.35"/>
     <GroupHeaderBand Name="GroupHeader1" Top="140.3" Width="718.2" Height="47.25" Fill.Color="LightBlue" Condition="[owner_pets.own]">
-      <TextObject Name="Text1" Left="18.9" Top="9.45" Width="198.45" Height="28.35" Fill.Color="LightBlue" Text="[owner_pets.own]" VertAlign="Center" Font="Arial, 14pt, style=Bold"/>
+      <TextObject Name="Text1" Left="18.9" Top="9.45" Width="198.45" Height="28.35" Fill.Color="LightBlue" CanGrow="true" Text="[owner_pets.own]" VertAlign="Center" Font="Arial, 14pt, style=Bold"/>
+      <TextObject Name="txtGroupCount" Left="255.15" Top="9.45" Width="94.5" Height="18.9" Visible="false" BeforePrintEvent="txtGroupCount_BeforePrint" Text="1"/>
       <DataBand Name="Data1" Top="191.55" Width="718.2" Height="56.7" DataSource="owner_pets">
-        <TextObject Name="Text2" Left="37.8" Top="18.9" Width="151.2" Height="18.9" Text="[owner_pets.petName]"/>
+        <TextObject Name="Text2" Left="37.8" Top="18.9" Width="151.2" Height="18.9" Border.Lines="All" CanGrow="true" Text="[owner_pets.petName]"/>
         <TextObject Name="Text3" Left="207.9" Top="18.9" Width="141.75" Height="18.9" Text="[owner_pets.species]"/>
         <TextObject Name="Text4" Left="368.55" Top="18.9" Width="94.5" Height="18.9" Text="[owner_pets.sex]"/>
-        <TextObject Name="Text5" Left="481.95" Top="18.9" Width="207.9" Height="18.9" Text="[String.Format (&quot;{0:dd/MM/yyyy}&quot;,[owner_pets.birth])]" Format="Date" Format.Format="D"/>
+        <TextObject Name="Text5" Left="481.95" Top="18.9" Width="207.9" Height="18.9" CanGrow="true" Text="[String.Format (&quot;{0:dd/MM/yyyy}&quot;,[owner_pets.birth])]" Format="Date" Format.Format="D"/>
       </DataBand>
       <GroupFooterBand Name="GroupFooter1" Top="252.25" Width="718.2" Height="37.8">
         <TextObject Name="Text7" Left="481.95" Top="9.45" Width="207.9" Height="18.9" Text="Total:  [Total]" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
       </GroupFooterBand>
     </GroupHeaderBand>
     <ReportSummaryBand Name="ReportSummary1" Top="294.05" Width="718.2" Height="37.8">
-      <TextObject Name="Text11" Left="37.8" Top="9.45" Width="226.8" Height="18.9" Text="Average pets per owner: [Total2]" Format="Number" Format.UseLocale="true"/>
+      <TextObject Name="Text11" Left="37.8" Top="9.45" Width="226.8" Height="18.9" Text="Average pets per owner: " Format="Number" Format.UseLocale="true"/>
+      <TextObject Name="Text12" Left="264.6" Top="9.45" Width="94.5" Height="18.9" BeforePrintEvent="Text12_BeforePrint" Text="[avg]"/>
     </ReportSummaryBand>
     <PageFooterBand Name="PageFooter1" Top="335.85" Width="718.2" Height="47.25">
       <TextObject Name="Text8" Left="481.95" Width="207.9" Height="18.9" Text="Total:  [Total1]" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
